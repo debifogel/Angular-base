@@ -1,0 +1,22 @@
+<form (ngSubmit)="onSubmit()"  #teacherForm="ngForm">
+    @if(this.teacher)
+    {{{after()}}}
+    <label for="teacherToForm._Id">teacher id:</label>
+    <input id="teacherToForm._Id" [(ngModel)]="teacherToForm._Id" #Id="ngModel" name="teacherToForm._Id" required minlength="3">
+    @if(Id.touched&&Id.hasError('required')){<div class ="alert">
+        Name is required.
+      </div>}
+
+    <label for="teacherToForm._name">teacher name:</label>
+    <input id="teacherToForm._name" [(ngModel)]="teacherToForm._name" #name="ngModel" name="teacherToForm._name" required minlength="4">
+    
+    @if(name.invalid && (name.dirty ||name.touched)){<div class="alert">
+
+        Name must be at least 4 characters long.
+      </div>}
+    <label for="teacherToForm._classes">teacher classes:</label>
+    <input id="teacherToForm._classes" [(ngModel)]="teacherToForm._classes" name="teacherToForm._classes" required value="teacherToForm._classes">
+    
+    <button type="submit" >Submit</button>
+   </form>
+   

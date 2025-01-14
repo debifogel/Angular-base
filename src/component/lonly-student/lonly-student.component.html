@@ -1,0 +1,11 @@
+
+
+
+@if(!studentAlone.isactive)
+{
+    not active:<h5>{{studentAlone.leavedate}}</h5>
+}
+name:<input #name1  type="text"  placeholder={{studentAlone.name}}/>
+lastname:<input #last type="text" placeholder={{studentAlone.lastname}}/>
+adress::<input #adress type="text" placeholder={{studentAlone.adress}}/>
+<button (click)="Savedetails(name1.value||studentAlone.name,last.value||studentAlone.lastname,adress.value||studentAlone.adress)"> save</button>

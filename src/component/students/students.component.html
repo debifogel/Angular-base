@@ -1,0 +1,44 @@
+<ng-container *ngTemplateOutlet="myTemplate"></ng-container>
+@if(showCourse==true) 
+{
+<app-list-courses [paid]="studentpaid"><button (click)="NoShowcourses()"> x </button></app-list-courses>
+}
+<table>
+    <tbody>
+<tr><th>שם</th>
+    <th>משפחה</th>
+    <th>כתובת</th>
+    <th>עריכה</th>
+    <th>מחיקה</th>
+<th>קורסים</th></tr>
+@for(item of list;track item._id)
+{
+<tr>
+<td>{{item.name}}</td> 
+<td>{{item.lastname}}</td>
+<td>{{item.adress}}</td>
+<td><button (click)="toMake(item)" [innerHTML]="'עריכה'|textToIcon"></button></td>
+<td><button (click)="toDelete(item._id)" [innerHTML]="'מחיקה'|textToIcon"></button></td> 
+<td><button (click)="Showcourses(item)">לקורסים</button></td> 
+</tr> 
+}  
+</tbody>
+</table>
+<div>
+    <button (click)="toInsert()"> הוספת סטודנט</button>
+</div>
+@if(maker==true||newer==true)    
+{<app-lonly-student [studentAlone]="studenttoconponent" (onSaveDetails)="saveStudentToList($event)"></app-lonly-student>}
+<ng-container *ngTemplateOutlet="myTemplate"></ng-container>
+@if(deletestudent==true)
+{
+    <app-information-pop-up><div ngProjectAs="myheader"><b>האם אתה בטוח שברצונך למחוק תלמיד זה? {{_idstudennt}}</b></div>
+    <div ngProjectAs="myfooter">
+        <button (click)="deleteStudent()">v</button>
+        <button (click)="notDeleteStudent()">x</button>
+    </div></app-information-pop-up>
+}
+
+<ng-template #myTemplate>
+    <h3>------------רשימת תלמידים----------------</h3>
+</ng-template>

@@ -1,0 +1,10 @@
+#popUp{
+    border: 3px solid red;
+    background-color: rgb(254, 212, 157);
+    position: fixed;
+    color: red;
+    bottom: 50px;
+    right: 30px;
+    height: 70px;
+    width: 150px;
+}

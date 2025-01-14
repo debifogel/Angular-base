@@ -1,0 +1,18 @@
+@if(addEvent)
+{
+  //input of title and date
+<input type="text" placeholder="subject" #_title/>
+<input type="date" #_date >
+<button (click)="addNewEvent(_title.value,_date.value)">ADD</button>
+}
+@else {
+    <button (click)="addEvent=true">+</button>
+}
+@for(item of (eventService.eventes$| async);track item.id)
+{
+   <div>
+    <h3>{{item.title}}</h3>
+    <h6>{{item.date}}</h6>
+   </div>
+   <input type="checkbox" onclick="eventService.deleteEvent(item.id)"/>
+}

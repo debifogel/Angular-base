@@ -1,0 +1,13 @@
+#body{
+    height: 200px;
+    width:auto;
+    position: fixed;
+    right: 100px;
+    overflow-y: scroll;
+}
+.long{
+    background-color: aquamarine;
+}
+.short{
+    background-color:cornflowerblue;
+}

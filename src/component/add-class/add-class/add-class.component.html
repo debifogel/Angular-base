@@ -1,0 +1,21 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    
+    <label for="nameCourse">name:</label>
+    <input id="nameCourse" formControlName="nameCourse" required>
+
+    <label for="subbject">subbject:</label>
+    <input id="subbject" formControlName="subbject" required>
+
+    @if (f['nameCourse'] && f['nameCourse'].errors && f['nameCourse'].touched) {
+        @if (f['nameCourse'].errors['required']) {
+            <div>name of Course is required</div>
+        }
+    }
+    @if (f['subbject'] && f['subbject'].errors && f['subbject'].touched) {
+        @if (f['subbject'].errors['minLength']) {
+            <div>the subject of course is shorted write more</div>
+        }
+    }
+    <button type="submit" [disabled]="form.invalid">Submit</button>
+</form>
+<button (click)="addClass()">add class?</button>

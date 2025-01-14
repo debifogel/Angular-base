@@ -1,0 +1,24 @@
+<div id="body"><ng-content></ng-content>
+
+@if(paid==false)
+{<ul>
+@for(course of courses;track course.idCourse)
+{
+<li ColorFull [ngClass]="course.cost>500?'long':'short'">
+    {{course._nameCourse}} {{course._subbject.toString()}}
+</li>
+}
+</ul>
+}
+
+@else {
+    <ul>
+    @for(course of courses;track course.idCourse) {
+        <label ColorFull>
+            <input  type="checkbox" [value]="course.idCourse"  [checked]="isSelected(course.idCourse)" (change)="toggleSelection(course.idCourse)" > {{ course._nameCourse}}{{course._subbject}}
+          </label>
+          <li></li>
+    }
+    </ul>
+}
+</div>
