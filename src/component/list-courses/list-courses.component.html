@@ -4,7 +4,7 @@
 {<ul>
 @for(course of courses;track course.idCourse)
 {
-<li ColorFull [ngClass]="course.cost>500?'long':'short'">
+<li ColorFull >
     {{course._nameCourse}} {{course._subbject.toString()}}
 </li>
 }
@@ -14,10 +14,11 @@
 @else {
     <ul>
     @for(course of courses;track course.idCourse) {
-        <label ColorFull>
-            <input  type="checkbox" [value]="course.idCourse"  [checked]="isSelected(course.idCourse)" (change)="toggleSelection(course.idCourse)" > {{ course._nameCourse}}{{course._subbject}}
+        <label ColorFull [ngClass]="{'long': isExpensive(course._cost), 'short': !isExpensive(course._cost)}">
+            <input  type="checkbox" [value]="course.idCourse"  [checked]="isSelected(course.idCourse)" (change)="toggleSelection(course.idCourse)" >
+             {{ course._nameCourse}}{{course._subbject}}{{course._cost}}
           </label>
-          <li></li>
+          
     }
     </ul>
 }

@@ -8,8 +8,8 @@ export class CourseslistService {
   constructor() { }
   static  courses = [
     new Course("shufra",Subbject.QA,500,["קוגל","ita"]),
-    new Course("wolf",Subbject.QA,500,["קוגל","ita"]),
-    new Course("yashan",Subbject.QA,5000,["קוגל","ita"]),
+    new Course("wolf",Subbject.QA,5000,["קוגל","ita"]),
+    new Course("yashan",Subbject.QA,50000,["קוגל","ita"]),
     new Course("kodesh",Subbject.QA,500,["קוגל","yafi"])
 
     ];

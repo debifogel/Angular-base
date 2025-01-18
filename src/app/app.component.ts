@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive,RouterOutlet } from '@angular/router';
-import { EventListComponent } from '../component/evenets/event-list/event-list.component';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +8,7 @@ import { EventListComponent } from '../component/evenets/event-list/event-list.c
   imports: [ CommonModule, 
     RouterOutlet,
     RouterLink, 
-    RouterLinkActive,EventListComponent],
+    RouterLinkActive],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

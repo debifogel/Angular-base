@@ -6,8 +6,8 @@
     overflow-y: scroll;
 }
 .long{
-    background-color: aquamarine;
+color: rgb(255, 127, 200);
 }
 .short{
-    background-color:cornflowerblue;
+color:cornflowerblue;
 }

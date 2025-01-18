@@ -12,6 +12,9 @@ import { MyEvent } from '../../../classes/Event';
 })
 export class EventListComponent {
   constructor(public eventService: EventesApiService){}
+  
+ 
+  
   addEvent=false
   
   addNewEvent(title:string ,date:string)
